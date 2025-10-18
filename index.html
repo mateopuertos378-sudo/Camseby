@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="facebook-domain-verification" content="3ix94j8nszi85a87pefqduy7qjende" />
+    <title>Camseby - Soluciones Empresariales de Vanguardia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 50%, #5c6bc0 100%);
+            color: white;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="tech-pattern" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="45" cy="15" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="15" cy="45" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="45" cy="45" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23tech-pattern)"/></svg>');
+            animation: techFloat 25s infinite linear;
+        }
+
+        @keyframes techFloat {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0px) rotate(360deg); }
+        }
+
+        .header-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 60px 0;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 5.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            text-shadow: 4px 4px 12px rgba(0,0,0,0.4);
+            background: linear-gradient(45deg, #ffffff, #e8eaf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: logoGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes logoGlow {
+            from { 
+                text-shadow: 4px 4px 12px rgba(0,0,0,0.4), 0 0 50px rgba(92, 107, 192, 0.4);
+                transform: scale(1);
+            }
+            to { 
+                text-shadow: 4px 4px 12px rgba(0,0,0,0.4), 0 0 80px rgba(92, 107, 192, 0.6);
+                transform: scale(1.03);
+            }
+        }
+
+        .logo-subtitle {
+            font-size: 1.8rem;
+            opacity: 0.95;
+            margin-bottom: 30px;
+            font-weight: 500;
+            color: #f3e5f5;
+        }
+
+        .tagline {
+            font-size: 1.6rem;
+            max-width: 950px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+            opacity: 0.95;
+            font-weight: 400;
+            color: #e8eaf6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #3949ab, #5c6bc0);
+            color: white;
+            padding: 22px 55px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.3rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 12px 35px rgba(57, 73, 171, 0.4);
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 45px rgba(57, 73, 171, 0.5);
+            color: white;
+            text-decoration: none;
+            border-color: rgba(57, 73, 171, 0.3);
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(26, 35, 126, 0.95);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(57, 73, 171, 0.2);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            background: rgba(57, 73, 171, 0.2);
+            color: #f3e5f5;
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8eaf6 100%);
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #3949ab;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 6px;
+            background: linear-gradient(45deg, #3949ab, #5c6bc0);
+            border-radius: 3px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.4rem;
+            color: #546e7a;
+            margin-bottom: 80px;
+            font-weight: 400;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+            margin-top: 60px;
+        }
+
+        .about-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #2d3748;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+        .experience-highlight {
+            background: linear-gradient(45deg, #3949ab, #5c6bc0);
+            color: white;
+            padding: 50px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 20px 50px rgba(57, 73, 171, 0.3);
+        }
+
+        .experience-highlight h3 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            margin-top: 80px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 60px 50px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            border-top: 6px solid #3949ab;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(45deg, #3949ab, #5c6bc0);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-25px);
+            box-shadow: 0 35px 70px rgba(0,0,0,0.2);
+        }
+
+        .feature-icon {
+            font-size: 4.5rem;
+            color: #3949ab;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2);
+            color: #5c6bc0;
+        }
+
+        .feature-card h3 {
+            font-size: 1.9rem;
+            color: #2d3748;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #546e7a;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8eaf6 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+            margin-top: 80px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 60px 50px;
+            border-radius: 25px;
+            border-left: 8px solid #3949ab;
+            transition: all 0.4s ease;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            font-size: 2.2rem;
+            color: #2d3748;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 15px 0;
+            color: #546e7a;
+            border-bottom: 1px solid #e1f5fe;
+            position: relative;
+            padding-left: 30px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-list li:hover {
+            color: #3949ab;
+            padding-left: 35px;
+        }
+
+        .service-list li:before {
+            content: "🚀";
+            position: absolute;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+
+        .service-list li:hover:before {
+            transform: translateX(8px);
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 80px;
+        }
+
+        .team-member {
+            background: white;
+            padding: 60px 50px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            border: 2px solid #e8eaf6;
+        }
+
+        .team-member:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 35px 70px rgba(0,0,0,0.2);
+            border-color: #3949ab;
+        }
+
+        .team-member img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 30px;
+            border: 6px solid #3949ab;
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover img {
+            transform: scale(1.1);
+            border-color: #5c6bc0;
+        }
+
+        .team-member h4 {
+            font-size: 1.7rem;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .team-member .position {
+            color: #3949ab;
+            font-weight: 600;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+
+        .team-member .quote {
+            font-style: italic;
+            color: #546e7a;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 60px;
+        }
+
+        .contact-info h3 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #f3e5f5;
+            font-weight: 600;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item:hover {
+            background: rgba(57, 73, 171, 0.2);
+            transform: translateX(8px);
+        }
+
+        .contact-item i {
+            color: #f3e5f5;
+            margin-right: 25px;
+            margin-top: 5px;
+            width: 30px;
+            font-size: 1.4rem;
+        }
+
+        .contact-item span {
+            line-height: 1.6;
+            font-size: 1.2rem;
+        }
+
+        .business-hours {
+            background: rgba(255,255,255,0.15);
+            padding: 50px;
+            border-radius: 20px;
+            margin-top: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .business-hours h4 {
+            color: #f3e5f5;
+            margin-bottom: 30px;
+            font-size: 1.7rem;
+            font-weight: 600;
+        }
+
+        .business-hours p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .business-hours strong {
+            color: #f3e5f5;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        footer p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 80px;
+            height: 80px;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 40px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background: linear-gradient(45deg, #128c7e, #25d366);
+            transform: scale(1.15);
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4), 0 0 0 20px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 4rem;
+                letter-spacing: 3px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .features-grid,
+            .services-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .section-title {
+                font-size: 2.8rem;
+            }
+
+            .header-content {
+                padding: 40px 0;
+            }
+
+            .cta-button {
+                padding: 20px 45px;
+                font-size: 1.2rem;
+            }
+
+            .whatsapp-float {
+                width: 70px;
+                height: 70px;
+                font-size: 35px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Tech-specific styling */
+        .highlight-text {
+            color: #3949ab;
+            font-weight: 600;
+        }
+
+        .mission-section {
+            background: linear-gradient(45deg, #3949ab, #5c6bc0);
+            color: #ffffff;
+            padding: 60px;
+            border-radius: 25px;
+            margin: 50px 0;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(57, 73, 171, 0.3);
+        }
+
+        .mission-section h3 {
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+
+        .mission-section p {
+            font-size: 1.3rem;
+            line-height: 1.7;
+        }
+
+        /* Tech animation */
+        .tech-animation {
+            display: inline-block;
+            animation: techPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes techPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">CAMSEBY</h1>
+                <p class="logo-subtitle">Soluciones Empresariales de Vanguardia</p>
+                <p class="tagline">En Camseby, revolucionamos el mundo empresarial con tecnología de punta y servicios innovadores. Transformamos tu visión en realidad a través de soluciones digitales avanzadas y consultoría especializada.</p>
+                <a href="#contact" class="cta-button">Descubre Nuestros Servicios</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#team">Equipo</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegir Camseby?</h2>
+            <p class="section-subtitle">Innovación, tecnología y excelencia en cada proyecto</p>
+            <div class="about-content">
+                <div>
+                    <p class="about-text">
+                        Camseby es una empresa líder en soluciones empresariales y tecnológicas de vanguardia. Con una visión innovadora y un equipo altamente especializado, ofrecemos servicios integrales que van desde desarrollo de software personalizado hasta consultoría estratégica, siempre con el más alto nivel de profesionalismo y calidad.
+                    </p>
+                    <p class="about-text">
+                        Nuestra pasión por la innovación tecnológica nos impulsa a ofrecer solo las mejores soluciones y servicios. Trabajamos con las tecnologías más avanzadas del mercado para garantizar que cada cliente encuentre la solución perfecta para sus necesidades empresariales.
+                    </p>
+                </div>
+                <div>
+                    <div class="experience-highlight">
+                        <h3>Excelencia Tecnológica</h3>
+                        <p>Soluciones de vanguardia con garantía de calidad y soporte técnico especializado</p>
+                    </div>
+                    <p class="about-text">
+                        En Camseby, cada proyecto es cuidadosamente planificado y ejecutado por nuestro equipo de especialistas altamente capacitados. Ofrecemos <strong class="highlight-text">SERVICIOS PROFESIONALES</strong> con tecnologías de punta y soporte técnico especializado para todas las industrias.
+                    </p>
+                    <div class="mission-section">
+                        <h3>Nuestra Misión</h3>
+                        <p>Ser la empresa líder en soluciones empresariales en Mar del Plata, ofreciendo servicios de calidad, tecnología de vanguardia y asesoramiento personalizado para que cada cliente alcance sus objetivos empresariales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">¿Qué nos hace únicos?</h2>
+            <p class="section-subtitle">Características que nos posicionan como líderes en soluciones empresariales</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Innovación Tecnológica</h3>
+                    <p>Desarrollamos soluciones personalizadas utilizando las tecnologías más avanzadas del mercado, garantizando eficiencia, escalabilidad y rendimiento óptimo.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Inteligencia Artificial</h3>
+                    <p>Implementamos sistemas de IA y machine learning para automatizar procesos, optimizar decisiones y maximizar la productividad empresarial.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Consultoría Especializada</h3>
+                        <p>Nuestro equipo de consultores expertos ofrece análisis, planificación estratégica y optimización de procesos para maximizar la productividad empresarial.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Análisis de Datos</h3>
+                    <p>Transformamos datos en insights valiosos mediante análisis avanzados y visualizaciones interactivas para la toma de decisiones estratégicas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">Soluciones integrales para el crecimiento de tu empresa</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Desarrollo de Software</h3>
+                    <p>Soluciones tecnológicas personalizadas para tu empresa:</p>
+                    <ul class="service-list">
+                        <li>Aplicaciones web y móviles</li>
+                        <li>Sistemas de gestión empresarial</li>
+                        <li>Plataformas de e-commerce</li>
+                        <li>Software de automatización</li>
+                        <li>APIs y integraciones</li>
+                        <li>Bases de datos personalizadas</li>
+                        <li>Soluciones de inteligencia artificial</li>
+                        <li>Desarrollo de aplicaciones cloud</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Consultoría Empresarial</h3>
+                    <p>Asesoramiento estratégico para optimizar tu negocio:</p>
+                    <ul class="service-list">
+                        <li>Análisis de procesos empresariales</li>
+                        <li>Planificación estratégica</li>
+                        <li>Optimización de recursos</li>
+                        <li>Transformación digital</li>
+                        <li>Gestión de proyectos</li>
+                        <li>Análisis de mercado</li>
+                        <li>Consultoría en tecnología</li>
+                        <li>Capacitación de equipos</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Soporte Técnico</h3>
+                    <p>Mantenimiento y soporte profesional para tus sistemas:</p>
+                    <ul class="service-list">
+                        <li>Mantenimiento preventivo</li>
+                        <li>Soporte 24/7</li>
+                        <li>Actualizaciones de software</li>
+                        <li>Respaldo y recuperación de datos</li>
+                        <li>Monitoreo de sistemas</li>
+                        <li>Capacitación de usuarios</li>
+                        <li>Diagnóstico y resolución de problemas</li>
+                        <li>Soporte remoto y presencial</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <h2 class="section-title">Nuestro Equipo</h2>
+            <p class="section-subtitle">Profesionales especializados que te ayudarán a alcanzar tus objetivos empresariales</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face" alt="Carlos Mendoza">
+                    <h4>Carlos Mendoza</h4>
+                    <p class="position">CEO y Fundador</p>
+                    <p class="quote">"En Camseby, cada proyecto cuenta una historia de éxito. Nuestro objetivo es transformar tu visión empresarial en realidad con tecnología de vanguardia."</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face" alt="Ana Rodríguez">
+                    <h4>Ana Rodríguez</h4>
+                    <p class="position">Directora de Tecnología</p>
+                    <p class="quote">"La innovación es mi pasión. Te ayudo a implementar las tecnologías más avanzadas para optimizar tu empresa y alcanzar nuevos niveles de eficiencia."</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Miguel Torres">
+                    <h4>Miguel Torres</h4>
+                    <p class="position">Consultor Senior</p>
+                    <p class="quote">"Cada empresa merece la mejor estrategia. Con más de 15 años de experiencia, tu proyecto estará en las mejores manos para alcanzar el éxito."</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face" alt="Laura Fernández">
+                    <h4>Laura Fernández</h4>
+                    <p class="position">Especialista en Desarrollo</p>
+                    <p class="quote">"La tecnología es el futuro. Te ayudo a encontrar la solución perfecta para digitalizar tu empresa con eficiencia, estilo y resultados excepcionales."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">¿Listo para transformar tu empresa?</h2>
+            <p class="section-subtitle" style="color: #e8eaf6;">Contáctanos y descubre las soluciones de Camseby</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>España 4353, Mar Del Plata</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+5491164728234</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@camseby.com</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-id-card"></i>
+                        <span>CUIL: 20465649047</span>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="business-hours">
+                        <h4>Horarios de Atención</h4>
+                        <p><strong>Horario comercial:</strong></p>
+                        <p>Lunes a Viernes: 9:00 a 18:00 hs</p>
+                        <p>Sábados: 9:00 a 13:00 hs</p>
+                        <br>
+                        <p><strong>Soporte técnico:</strong></p>
+                        <p>Lunes a Viernes: 8:00 a 19:00 hs</p>
+                        <p>WhatsApp: +5491164728234</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Camseby. Todos los derechos reservados</p>
+            <p>Tu empresa de soluciones tecnológicas de confianza en Mar del Plata</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scrolling effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(26, 35, 126, 0.98)';
+            } else {
+                nav.style.background = 'rgba(26, 35, 126, 0.95)';
+            }
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards and service cards
+        document.querySelectorAll('.feature-card, .service-card, .team-member').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5491164728234?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20servicios%20de%20Camseby" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
